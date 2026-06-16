@@ -1,8 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Download, Plus, Trash2 } from "lucide-react";
-import jsPDF from "jspdf";
-import autoTable from "jspdf-autotable";
 import { SiteHeader, SiteFooter } from "@/components/SiteHeader";
 import { AdSlot } from "@/components/AdSlot";
 
@@ -250,7 +248,11 @@ interface PdfData {
   totals: { subtotal: number; gstTotal: number; grand: number };
 }
 
-function generatePdf(d: PdfData) {
+async function generatePdf(d: PdfData) {
+  const [{ default: jsPDF }, { default: autoTable }] = await Promise.all([
+    import("jspdf"),
+    import("jspdf-autotable"),
+  ]);
   const doc = new jsPDF();
   const w = doc.internal.pageSize.getWidth();
   const rupee = "Rs."; // jsPDF default fonts don't render ₹ reliably
