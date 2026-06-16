@@ -42,18 +42,20 @@ function QrPage() {
 
   useEffect(() => {
     if (!payload) return;
+    const renderSize = Math.max(300, size);
     const opts = {
-      width: size,
+      width: renderSize,
       margin: 2,
+      errorCorrectionLevel: "H" as const,
       color: { dark: fg, light: bg },
-    } as const;
+    };
     if (canvasRef.current) {
       QRCode.toCanvas(canvasRef.current, payload, opts).catch(() => {});
     }
     QRCode.toString(payload, { ...opts, type: "svg" })
       .then(setSvgString)
       .catch(() => setSvgString(""));
-  }, [payload, fg, bg, size]);
+  }, [payload, fg, bg, size, mode]);
 
   const downloadPng = () => {
     if (!canvasRef.current) return;
@@ -162,7 +164,7 @@ function QrPage() {
                 <Field label={`Size: ${size}px`}>
                   <input
                     type="range"
-                    min={160}
+                    min={300}
                     max={640}
                     step={20}
                     value={size}
@@ -187,7 +189,7 @@ function QrPage() {
                 style={{ backgroundColor: bg }}
               >
                 {payload ? (
-                  <canvas ref={canvasRef} className="h-full w-full" />
+                  <canvas ref={canvasRef} className="h-auto w-full max-w-full" style={{ imageRendering: "pixelated" }} />
                 ) : (
                   <div className="text-center text-muted-foreground">
                     <QrIcon className="mx-auto h-10 w-10 opacity-40" />
