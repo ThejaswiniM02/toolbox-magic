@@ -42,18 +42,20 @@ function QrPage() {
 
   useEffect(() => {
     if (!payload) return;
+    const renderSize = Math.max(300, size);
     const opts = {
-      width: size,
+      width: renderSize,
       margin: 2,
+      errorCorrectionLevel: "H" as const,
       color: { dark: fg, light: bg },
-    } as const;
+    };
     if (canvasRef.current) {
       QRCode.toCanvas(canvasRef.current, payload, opts).catch(() => {});
     }
     QRCode.toString(payload, { ...opts, type: "svg" })
       .then(setSvgString)
       .catch(() => setSvgString(""));
-  }, [payload, fg, bg, size]);
+  }, [payload, fg, bg, size, mode]);
 
   const downloadPng = () => {
     if (!canvasRef.current) return;
