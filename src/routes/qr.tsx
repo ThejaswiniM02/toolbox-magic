@@ -164,7 +164,7 @@ function QrPage() {
                 <Field label={`Size: ${size}px`}>
                   <input
                     type="range"
-                    min={160}
+                    min={300}
                     max={640}
                     step={20}
                     value={size}
