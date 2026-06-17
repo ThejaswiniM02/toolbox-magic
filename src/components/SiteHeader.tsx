@@ -1,5 +1,32 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation, useNavigate } from "@tanstack/react-router";
 import { Wrench } from "lucide-react";
+import { useCallback } from "react";
+
+function GoEliteButton() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleClick = useCallback(
+    (e: React.MouseEvent) => {
+      e.preventDefault();
+      if (location.pathname === "/") {
+        document.getElementById("elite")?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        navigate({ to: "/", hash: "elite" });
+      }
+    },
+    [location.pathname, navigate]
+  );
+
+  return (
+    <button
+      onClick={handleClick}
+      className="ml-2 rounded-md bg-foreground px-3 py-2 text-xs font-semibold text-background hover:opacity-90"
+    >
+      Go Elite
+    </button>
+  );
+}
 
 export function SiteHeader() {
   return (
@@ -36,9 +63,7 @@ export function SiteHeader() {
           >
             Invoice
           </Link>
-          <button className="ml-2 rounded-md bg-foreground px-3 py-2 text-xs font-semibold text-background hover:opacity-90">
-            Go Elite
-          </button>
+          <GoEliteButton />
         </nav>
       </div>
     </header>
