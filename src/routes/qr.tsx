@@ -46,7 +46,7 @@ function QrPage() {
     const opts = {
       width: renderSize,
       margin: 2,
-      errorCorrectionLevel: "M" as const,
+      errorCorrectionLevel: "L" as const,
       color: { dark: fg, light: bg },
     };
     if (canvasRef.current) {
