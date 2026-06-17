@@ -283,11 +283,8 @@ function ModeButton({
 
 function buildUpi(pa: string, pn: string, am: string) {
   if (!pa) return "";
-  let url = `upi://pay?pa=${pa}`;
-  if (pn) url += `&pn=${pn}`;
-  if (am) url += `&am=${am}`;
-  url += "&cu=INR";
-  return url;
+  const encoded = `upi://pay?pa=${encodeURIComponent(pa)}&pn=${encodeURIComponent(pn || pa)}&cu=INR${am ? `&am=${am}` : ""}`;
+  return encoded;
 }
 
 function triggerDownload(href: string, filename: string) {
