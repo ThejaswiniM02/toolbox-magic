@@ -84,7 +84,7 @@ function Landing() {
         </section>
 
         {/* Elite */}
-        <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6">
+        <section id="elite" className="mx-auto max-w-7xl px-4 pb-20 sm:px-6">
           <div className="overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-foreground to-foreground/80 p-8 text-background sm:p-12">
             <div className="flex flex-wrap items-start justify-between gap-8">
               <div className="max-w-xl">

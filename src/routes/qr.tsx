@@ -31,7 +31,7 @@ function QrPage() {
   const [upiAmount, setUpiAmount] = useState("");
   const [fg, setFg] = useState("#1a1a2e");
   const [bg, setBg] = useState("#ffffff");
-  const [size, setSize] = useState(320);
+  const [size, setSize] = useState(400);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [svgString, setSvgString] = useState("");
 
@@ -42,7 +42,7 @@ function QrPage() {
 
   useEffect(() => {
     if (!payload) return;
-    const renderSize = Math.max(300, size);
+    const renderSize = Math.max(400, size);
     const opts = {
       width: renderSize,
       margin: 2,
@@ -164,8 +164,8 @@ function QrPage() {
                 <Field label={`Size: ${size}px`}>
                   <input
                     type="range"
-                    min={300}
-                    max={640}
+                    min={400}
+                    max={800}
                     step={20}
                     value={size}
                     onChange={(e) => setSize(Number(e.target.value))}
@@ -185,7 +185,7 @@ function QrPage() {
                 Live Preview
               </p>
               <div
-                className="mx-auto flex aspect-square w-full max-w-[320px] items-center justify-center rounded-xl p-4"
+                className="mx-auto flex aspect-square w-full max-w-[400px] items-center justify-center rounded-xl p-4"
                 style={{ backgroundColor: bg }}
               >
                 {payload ? (
@@ -283,11 +283,11 @@ function ModeButton({
 
 function buildUpi(pa: string, pn: string, am: string) {
   if (!pa) return "";
-  const parts = [`pa=${encodeURIComponent(pa)}`];
-  if (pn) parts.push(`pn=${encodeURIComponent(pn)}`);
-  if (am) parts.push(`am=${encodeURIComponent(am)}`);
-  parts.push("cu=INR");
-  return `upi://pay?${parts.join("&")}`;
+  let url = `upi://pay?pa=${pa}`;
+  if (pn) url += `&pn=${pn}`;
+  if (am) url += `&am=${am}`;
+  url += "&cu=INR";
+  return url;
 }
 
 function triggerDownload(href: string, filename: string) {
