@@ -283,12 +283,11 @@ function ModeButton({
 
 function buildUpi(pa: string, pn: string, am: string) {
   if (!pa) return "";
-  const params = new URLSearchParams();
-  params.set("pa", pa);
-  if (pn) params.set("pn", pn);
-  if (am) params.set("am", am);
-  params.set("cu", "INR");
-  return `upi://pay?${params.toString()}`;
+  const parts = [`pa=${encodeURIComponent(pa)}`];
+  if (pn) parts.push(`pn=${encodeURIComponent(pn)}`);
+  if (am) parts.push(`am=${encodeURIComponent(am)}`);
+  parts.push("cu=INR");
+  return `upi://pay?${parts.join("&")}`;
 }
 
 function triggerDownload(href: string, filename: string) {
