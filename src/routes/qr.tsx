@@ -189,7 +189,7 @@ function QrPage() {
                 style={{ backgroundColor: bg }}
               >
                 {payload ? (
-                 
+                 <canvas ref={canvasRef} className="h-auto w-full max-w-full" />
                 ) : (
                   <div className="text-center text-muted-foreground">
                     <QrIcon className="mx-auto h-10 w-10 opacity-40" />
