@@ -87,7 +87,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:description", content: "Free QR code & GST invoice generator. Built for India." },
       { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/ea0d8640-2042-40ba-b0d4-3f3772f59534" },
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/ea0d8640-2042-40ba-b0d4-3f3772f59534" },
-      { name: "google-site-verification", content: "4RRow7jm3QCuy6ATBOmsaCDDeep8BQVH8n4VaGAA7qw" />" },
+      { name: "google-site-verification", content: "4RRow7jm3QCuy6ATBOmsaCDDeep8BQVH8n4VaGAA7qw" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
