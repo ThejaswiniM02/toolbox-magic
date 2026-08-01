@@ -8,16 +8,16 @@ import { AdSlot } from "@/components/AdSlot";
 export const Route = createFileRoute("/qr")({
   head: () => ({
     meta: [
-      { title: "Free QR Code Generator with UPI — Toolkart.in" },
+      { title: "Free QR Code Generator with UPI — Toolbelt Studio" },
       {
         name: "description",
         content:
           "Generate free QR codes for URLs, text, or UPI payments. Customize colors and download as PNG or SVG. No signup.",
       },
-      { property: "og:title", content: "Free QR Code Generator — Toolkart.in" },
+      { property: "og:title", content: "Free QR Code Generator — Toolbelt Studio" },
       { property: "og:description", content: "Custom colored QR codes. UPI ready. PNG & SVG download." },
       { property: "og:url", content: "https://toolbelt-studio.lovable.app/qr" },
-      { name: "twitter:title", content: "Free QR Code Generator — Toolkart.in" },
+      { name: "twitter:title", content: "Free QR Code Generator — Toolbelt Studio" },
       { name: "twitter:description", content: "Custom colored QR codes. UPI ready. PNG & SVG download." },
     ],
     links: [{ rel: "canonical", href: "https://toolbelt-studio.lovable.app/qr" }],
@@ -44,7 +44,7 @@ type Mode = "url" | "text" | "upi";
 
 function QrPage() {
   const [mode, setMode] = useState<Mode>("url");
-  const [value, setValue] = useState("https://toolkart.in");
+  const [value, setValue] = useState("https://toolbelt-studio.lovable.app");
   const [upiId, setUpiId] = useState("yourname@upi");
   const [upiName, setUpiName] = useState("");
   const [upiAmount, setUpiAmount] = useState("");

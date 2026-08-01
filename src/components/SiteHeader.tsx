@@ -37,9 +37,10 @@ export function SiteHeader() {
             <Wrench className="h-4 w-4" />
           </span>
           <span>
-            Tool<span className="text-gradient-brand">kart</span>
-            <span className="text-muted-foreground">.in</span>
+            Tool<span className="text-gradient-brand">belt</span>
+            <span className="text-muted-foreground"> studio</span>
           </span>
+
         </Link>
         <nav className="flex items-center gap-1 text-sm font-medium">
           <Link
@@ -75,7 +76,7 @@ export function SiteFooter() {
     <footer className="border-t border-border/60 bg-muted/30">
       <div className="mx-auto max-w-7xl px-4 py-8 text-sm text-muted-foreground sm:px-6">
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <p>© {new Date().getFullYear()} Toolkart.in — Free tools for Indian businesses.</p>
+          <p>© {new Date().getFullYear()} Toolbelt Studio — Free tools for Indian businesses.</p>
           <p>Made in India 🇮🇳</p>
         </div>
       </div>

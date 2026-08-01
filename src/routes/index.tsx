@@ -6,19 +6,19 @@ import { AdSlot } from "@/components/AdSlot";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Toolkart.in — Free QR Code & GST Invoice Generator for India" },
+      { title: "Toolbelt Studio — Free QR Code & GST Invoice Tools" },
       {
         name: "description",
         content:
           "Free online tools made for Indian businesses. Generate custom QR codes and GST-compliant invoices in seconds. No signup required.",
       },
-      { property: "og:title", content: "Toolkart.in — Free QR & Invoice Tools" },
+      { property: "og:title", content: "Toolbelt Studio — Free QR & Invoice Tools" },
       {
         property: "og:description",
         content: "Generate QR codes & GST invoices instantly. Built for India.",
       },
       { property: "og:url", content: "https://toolbelt-studio.lovable.app/" },
-      { name: "twitter:title", content: "Toolkart.in — Free QR & Invoice Tools" },
+      { name: "twitter:title", content: "Toolbelt Studio — Free QR & Invoice Tools" },
       {
         name: "twitter:description",
         content: "Generate QR codes & GST invoices instantly. Built for India.",
@@ -31,13 +31,13 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
-          name: "Toolkart.in",
+          name: "Toolbelt Studio",
           url: "https://toolbelt-studio.lovable.app/",
           description:
             "Free QR code and GST invoice generators built for Indian businesses.",
           publisher: {
             "@type": "Organization",
-            name: "Toolkart.in",
+            name: "Toolbelt Studio",
             url: "https://toolbelt-studio.lovable.app/",
           },
         }),
