@@ -18,10 +18,32 @@ export const Route = createFileRoute("/invoice")({
         property: "og:description",
         content: "Indian GST invoice PDF generator. Free, fast, no signup.",
       },
+      { property: "og:url", content: "https://toolbelt-studio.lovable.app/invoice" },
+      { name: "twitter:title", content: "Free GST Invoice Generator — Toolkart.in" },
+      {
+        name: "twitter:description",
+        content: "Indian GST invoice PDF generator. Free, fast, no signup.",
+      },
+    ],
+    links: [{ rel: "canonical", href: "https://toolbelt-studio.lovable.app/invoice" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "GST Invoice Generator",
+          url: "https://toolbelt-studio.lovable.app/invoice",
+          applicationCategory: "BusinessApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
+        }),
+      },
     ],
   }),
   component: InvoicePage,
 });
+
 
 interface LineItem {
   id: string;

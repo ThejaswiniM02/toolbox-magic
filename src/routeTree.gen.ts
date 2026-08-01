@@ -9,10 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as QrRouteImport } from './routes/qr'
 import { Route as InvoiceRouteImport } from './routes/invoice'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const QrRoute = QrRouteImport.update({
   id: '/qr',
   path: '/qr',
@@ -33,34 +39,45 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/invoice': typeof InvoiceRoute
   '/qr': typeof QrRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/invoice': typeof InvoiceRoute
   '/qr': typeof QrRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/invoice': typeof InvoiceRoute
   '/qr': typeof QrRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/invoice' | '/qr'
+  fullPaths: '/' | '/invoice' | '/qr' | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/invoice' | '/qr'
-  id: '__root__' | '/' | '/invoice' | '/qr'
+  to: '/' | '/invoice' | '/qr' | '/sitemap.xml'
+  id: '__root__' | '/' | '/invoice' | '/qr' | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   InvoiceRoute: typeof InvoiceRoute
   QrRoute: typeof QrRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/qr': {
       id: '/qr'
       path: '/qr'
@@ -89,6 +106,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   InvoiceRoute: InvoiceRoute,
   QrRoute: QrRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

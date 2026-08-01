@@ -16,10 +16,29 @@ export const Route = createFileRoute("/qr")({
       },
       { property: "og:title", content: "Free QR Code Generator — Toolkart.in" },
       { property: "og:description", content: "Custom colored QR codes. UPI ready. PNG & SVG download." },
+      { property: "og:url", content: "https://toolbelt-studio.lovable.app/qr" },
+      { name: "twitter:title", content: "Free QR Code Generator — Toolkart.in" },
+      { name: "twitter:description", content: "Custom colored QR codes. UPI ready. PNG & SVG download." },
+    ],
+    links: [{ rel: "canonical", href: "https://toolbelt-studio.lovable.app/qr" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "QR Code Generator",
+          url: "https://toolbelt-studio.lovable.app/qr",
+          applicationCategory: "UtilitiesApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
+        }),
+      },
     ],
   }),
   component: QrPage,
 });
+
 
 type Mode = "url" | "text" | "upi";
 
