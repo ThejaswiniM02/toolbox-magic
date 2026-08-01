@@ -37,9 +37,10 @@ export function SiteHeader() {
             <Wrench className="h-4 w-4" />
           </span>
           <span>
-            Tool<span className="text-gradient-brand">kart</span>
-            <span className="text-muted-foreground">.in</span>
+            Tool<span className="text-gradient-brand">belt</span>
+            <span className="text-muted-foreground"> studio</span>
           </span>
+
         </Link>
         <nav className="flex items-center gap-1 text-sm font-medium">
           <Link
