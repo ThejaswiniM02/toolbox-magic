@@ -17,10 +17,31 @@ export const Route = createFileRoute("/")({
         property: "og:description",
         content: "Generate QR codes & GST invoices instantly. Built for India.",
       },
+      { property: "og:url", content: "https://toolbelt-studio.lovable.app/" },
+      { name: "twitter:title", content: "Toolkart.in — Free QR & Invoice Tools" },
+      {
+        name: "twitter:description",
+        content: "Generate QR codes & GST invoices instantly. Built for India.",
+      },
+    ],
+    links: [{ rel: "canonical", href: "https://toolbelt-studio.lovable.app/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Toolkart.in",
+          url: "https://toolbelt-studio.lovable.app/",
+          description:
+            "Free QR code and GST invoice generators built for Indian businesses.",
+        }),
+      },
     ],
   }),
   component: Landing,
 });
+
 
 function Landing() {
   return (
