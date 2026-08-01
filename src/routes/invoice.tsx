@@ -183,7 +183,7 @@ function InvoicePage() {
                           </td>
                           <td className="py-2 px-2 text-right font-medium tabular-nums">₹{amt.toFixed(2)}</td>
                           <td className="py-2 pl-2">
-                            <button onClick={() => removeItem(i.id)} className="rounded-md p-2 text-muted-foreground hover:bg-destructive/10 hover:text-destructive">
+                            <button type="button" aria-label="Delete item" title="Delete item" onClick={() => removeItem(i.id)} className="rounded-md p-2 text-muted-foreground hover:bg-destructive/10 hover:text-destructive">
                               <Trash2 className="h-4 w-4" />
                             </button>
                           </td>

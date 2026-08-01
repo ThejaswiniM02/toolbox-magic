@@ -77,18 +77,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Toolkart.in — Free Tools for Indian Businesses" },
-      { name: "description", content: "Free QR code & GST invoice generator. Built for India." },
-      { property: "og:title", content: "Toolkart.in — Free Tools for Indian Businesses" },
-      { property: "og:description", content: "Free QR code & GST invoice generator. Built for India." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:title", content: "Toolkart.in — Free Tools for Indian Businesses" },
-      { name: "twitter:description", content: "Free QR code & GST invoice generator. Built for India." },
+      { property: "og:site_name", content: "Toolkart.in" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/ea0d8640-2042-40ba-b0d4-3f3772f59534" },
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/ea0d8640-2042-40ba-b0d4-3f3772f59534" },
       { name: "google-site-verification", content: "4RRow7jm3QCuy6ATBOmsaCDDeep8BQVH8n4VaGAA7qw" },
     ],
+
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },

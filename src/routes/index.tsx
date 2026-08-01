@@ -167,7 +167,7 @@ function ToolCard({
       <div className={`inline-flex h-12 w-12 items-center justify-center rounded-xl ${accent}`}>
         {icon}
       </div>
-      <h3 className="mt-5 text-2xl font-bold">{title}</h3>
+      <h2 className="mt-5 text-2xl font-bold">{title}</h2>
       <p className="mt-2 text-muted-foreground">{desc}</p>
       <div className="mt-5 flex flex-wrap gap-2">
         {tags.map((t) => (
