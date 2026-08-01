@@ -6,7 +6,7 @@ import { AdSlot } from "@/components/AdSlot";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Toolbelt Studio — Free QR Code & GST Invoice Generator for India" },
+      { title: "Toolbelt Studio — Free QR Code & GST Invoice Tools" },
       {
         name: "description",
         content:
