@@ -7,19 +7,19 @@ import { AdSlot } from "@/components/AdSlot";
 export const Route = createFileRoute("/invoice")({
   head: () => ({
     meta: [
-      { title: "Free GST Invoice Generator (PDF) — Toolkart.in" },
+      { title: "Free GST Invoice Generator (PDF) — Toolbelt Studio" },
       {
         name: "description",
         content:
           "Create GST-compliant invoices for India. Auto-calculate CGST/SGST, totals in ₹, and download PDF instantly. Free.",
       },
-      { property: "og:title", content: "Free GST Invoice Generator — Toolkart.in" },
+      { property: "og:title", content: "Free GST Invoice Generator — Toolbelt Studio" },
       {
         property: "og:description",
         content: "Indian GST invoice PDF generator. Free, fast, no signup.",
       },
       { property: "og:url", content: "https://toolbelt-studio.lovable.app/invoice" },
-      { name: "twitter:title", content: "Free GST Invoice Generator — Toolkart.in" },
+      { name: "twitter:title", content: "Free GST Invoice Generator — Toolbelt Studio" },
       {
         name: "twitter:description",
         content: "Indian GST invoice PDF generator. Free, fast, no signup.",
@@ -348,7 +348,7 @@ async function generatePdf(d: PdfData) {
   doc.setFontSize(8);
   doc.setFont("helvetica", "normal");
   doc.setTextColor(120);
-  doc.text("Generated with Toolkart.in", 14, doc.internal.pageSize.getHeight() - 10);
+  doc.text("Generated with Toolbelt Studio", 14, doc.internal.pageSize.getHeight() - 10);
 
   doc.save(`${d.invoiceNo}.pdf`);
 }

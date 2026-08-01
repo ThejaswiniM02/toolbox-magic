@@ -75,7 +75,7 @@ export function SiteFooter() {
     <footer className="border-t border-border/60 bg-muted/30">
       <div className="mx-auto max-w-7xl px-4 py-8 text-sm text-muted-foreground sm:px-6">
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <p>© {new Date().getFullYear()} Toolkart.in — Free tools for Indian businesses.</p>
+          <p>© {new Date().getFullYear()} Toolbelt Studio — Free tools for Indian businesses.</p>
           <p>Made in India 🇮🇳</p>
         </div>
       </div>
