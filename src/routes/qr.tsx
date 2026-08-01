@@ -8,7 +8,7 @@ import { AdSlot } from "@/components/AdSlot";
 export const Route = createFileRoute("/qr")({
   head: () => ({
     meta: [
-      { title: "QR Code Generator — Free Custom QR with UPI Support | Toolkart.in" },
+      { title: "Free QR Code Generator with UPI — Toolkart.in" },
       {
         name: "description",
         content:
@@ -26,11 +26,11 @@ export const Route = createFileRoute("/qr")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "WebApplication",
+          "@type": "SoftwareApplication",
           name: "QR Code Generator",
           url: "https://toolbelt-studio.lovable.app/qr",
           applicationCategory: "UtilitiesApplication",
-          operatingSystem: "Any",
+          operatingSystem: "All",
           offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
         }),
       },

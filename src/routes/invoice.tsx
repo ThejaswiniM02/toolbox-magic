@@ -7,7 +7,7 @@ import { AdSlot } from "@/components/AdSlot";
 export const Route = createFileRoute("/invoice")({
   head: () => ({
     meta: [
-      { title: "GST Invoice Generator — Free Indian Invoice PDF | Toolkart.in" },
+      { title: "Free GST Invoice Generator (PDF) — Toolkart.in" },
       {
         name: "description",
         content:
@@ -31,11 +31,11 @@ export const Route = createFileRoute("/invoice")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "WebApplication",
+          "@type": "SoftwareApplication",
           name: "GST Invoice Generator",
           url: "https://toolbelt-studio.lovable.app/invoice",
           applicationCategory: "BusinessApplication",
-          operatingSystem: "Any",
+          operatingSystem: "All",
           offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
         }),
       },
@@ -183,7 +183,7 @@ function InvoicePage() {
                           </td>
                           <td className="py-2 px-2 text-right font-medium tabular-nums">₹{amt.toFixed(2)}</td>
                           <td className="py-2 pl-2">
-                            <button onClick={() => removeItem(i.id)} className="rounded-md p-2 text-muted-foreground hover:bg-destructive/10 hover:text-destructive">
+                            <button type="button" aria-label="Delete item" title="Delete item" onClick={() => removeItem(i.id)} className="rounded-md p-2 text-muted-foreground hover:bg-destructive/10 hover:text-destructive">
                               <Trash2 className="h-4 w-4" />
                             </button>
                           </td>
