@@ -7,7 +7,7 @@ import { AdSlot } from "@/components/AdSlot";
 export const Route = createFileRoute("/invoice")({
   head: () => ({
     meta: [
-      { title: "GST Invoice Generator — Free Indian Invoice PDF | Toolkart.in" },
+      { title: "Free GST Invoice Generator (PDF) — Toolkart.in" },
       {
         name: "description",
         content:
@@ -31,11 +31,11 @@ export const Route = createFileRoute("/invoice")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "WebApplication",
+          "@type": "SoftwareApplication",
           name: "GST Invoice Generator",
           url: "https://toolbelt-studio.lovable.app/invoice",
           applicationCategory: "BusinessApplication",
-          operatingSystem: "Any",
+          operatingSystem: "All",
           offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
         }),
       },

@@ -35,6 +35,11 @@ export const Route = createFileRoute("/")({
           url: "https://toolbelt-studio.lovable.app/",
           description:
             "Free QR code and GST invoice generators built for Indian businesses.",
+          publisher: {
+            "@type": "Organization",
+            name: "Toolkart.in",
+            url: "https://toolbelt-studio.lovable.app/",
+          },
         }),
       },
     ],
